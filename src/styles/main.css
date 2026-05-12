@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    color: #ddd
+}
+
+.waterfall-text-inner {
+    transition-duration: 450ms;
+}
+
+.waterfall-text-inner>* {
+    height: 1em;
+}
+
+.waterfall-text-transparent {
+    opacity: 0.4;
+}
+
+.card-select-button {
+    background-color: #11111150;
+}
+
+.card-select-button>img {
+    opacity: 0.4;
+    filter: invert();
+    pointer-events: none;
+    user-select: none;
+}
+
+.card-select-button:hover {
+    background-color: #111111ee;
+}
+
+.card-select-button:hover>img {
+    opacity: 1;
+    scale: 1.15;
+}
+
+.card-select-button:active>img {
+    scale: 0.9;
+}
+
+.card-bg-active {
+    opacity: 0.6
+}
+
+.card:hover .card-bg-1, .card:hover .card-bg-2,
+.card.selected .card-bg-1, .card.selected .card-bg-2 {
+    filter: brightness(0.8)
+}
+
+.card:hover .card-bg-1, .card.selected .card-bg-1 {
+    opacity: 1;
+}
+
+.card:not(:hover):not(.selected) .card-bg-2 {
+    opacity: 1;
+}
+
+.card.selected .img-add {
+    rotate: 0deg !important;
+}
+
+.card:not(.selected).select-disabled .card-select-btn {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.card.selected {
+    border-color: rgb(10, 101, 10);
+    padding: 2px
+}
+
+.card.in-fleet .fleet-toggle-button-wrapper, .card:hover .fleet-toggle-button-wrapper {
+    transform: translateY(+100%);
+    opacity: 1;
+}
+
+.fleet-toggle-button:hover {
+    filter: brightness(120%)
+}
+
+.card:not(:hover) .fleet-toggle-button {
+    filter: brightness(50%)
+}
+
+th, td {
+    padding: 8px 20px;
+    text-transform: capitalize;
+    border: 1px solid #333;
+}
+
+#table-wrapper {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(50px);
+}
+
+#table-backdrop:has( #table-wrapper:not(.shown)) {
+    opacity: 0;
+}
+
+#table-wrapper.shown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#loading-overlay {
+    transition-duration: 400ms;
+    padding-top: 50px;
+    opacity: 0;
+}
