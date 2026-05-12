@@ -31,8 +31,9 @@ export function updateWaterfallTexts(rocketData) {
     })
 }
 
+const DIGITS = 8
+
 export function initWaterfallTexts() {
-    const DIGITS = 10
     /* a flottába helyezett rakéták összesített teherbírása (LEO, kg), */
     let parent = document.querySelector("#topbar-kg")
     for (let i = 0; i < DIGITS; i++) {

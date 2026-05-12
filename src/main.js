@@ -1,6 +1,7 @@
 import getRockets from "./api/getRockets";
 import displayComparisonTable from "./helpers/displayComparisonTable";
 import { getComparisonData } from "./helpers/getComparisonData";
+import getCostPerLaunch from "./helpers/getCostPerLaunch";
 import { _initLoadingOverlay, hideLoadingOverlay } from "./helpers/loadingOverlayHandler";
 import { initWaterfallTexts as _initWaterfallTexts, updateWaterfallTexts } from "./helpers/waterfallText";
 import WaterfallText from "./helpers/waterfallTextClass";
@@ -10,7 +11,7 @@ const rockets = []
 
 async function _init() {
   _initLoadingOverlay()
-  
+
   getRockets().then((data) => {
     rockets.push(...data.map((e, idx) => ({
       id: idx,
@@ -18,6 +19,7 @@ async function _init() {
       isInFleet: false,
       data: e,
     })))
+    rockets.sort((a, b) => getCostPerLaunch(a.data) - getCostPerLaunch(b.data))
 
     _initWaterfallTexts()
     _initCards(rockets)
@@ -92,6 +94,11 @@ function updateCards(rocketData) {
     const fleetToggleBtn = card.querySelector(".fleet-toggle-button")
     fleetToggleBtn.textContent = r.isInFleet ? "Levétel flottából" : "Hozzáadás flottához"
 
+
+    card.querySelector(".cpl-output").textContent = getCostPerLaunch(r.data) + " $"
+    card.querySelector(".leo-output").textContent = r.data.payloadToLeoKg + " kg"
+
+
     if (showingFleetRockets && !r.isInFleet) {
       card.classList.add("hidden")
     }
@@ -129,6 +136,8 @@ function _initCards(rocketData) {
 
     wrapper.appendChild(card)
   })
+
+  updateCards(rocketData)
 }
 
 window.onload = _init
