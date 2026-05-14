@@ -12,15 +12,15 @@
 
 <body>
     <div id="loading-overlay"
-        class="fixed top-0 left-0 w-full h-screen z-50 select-none backdrop-blur-sm flex justify-center items-center font-mono text-lg">
+        class="fixed top-0 left-0 w-full h-screen z-50 select-none backdrop-blur-sm flex justify-center items-center tracking-wide text-lg">
         Kapcsolódás a SpaceX szerveréhez.
     </div>
     <main class="p-6 absolute w-full min-h-screen">
         <!-- fenti wrap -->
-        <section class="fixed top-0 left-0 w-full flex justify-center pointer-events-none font-mono z-10">
+        <section class="fixed top-0 left-0 w-full flex justify-center pointer-events-none tracking-wide z-50">
             <div class="rounded-b-2xl border border-t-0 border-white/5 p-1.5 pt-0">
                 <div
-                    class="flex gap-11 rounded-b-xl border border-t-0 border-white/10 bg-neutral-500/5 py-3 pb-3.5 px-14">
+                    class="flex gap-11 rounded-b-xl border border-t-0 border-white/10 bg-neutral-800 py-3 pb-3.5 px-14">
                     <!-- 
                     a flottába helyezett rakéták összesített teherbírása (LEO, kg),
                     a flottába helyezett rakéták átlagos kilövési költsége (a 3. pont képlete alapján).
@@ -49,9 +49,9 @@
 
         <!-- table wrap -->
         <section id="table-backdrop"
-            class="duration-500 absolute flex justify-center items-center left-0 top-0 w-full h-screen font-mono pointer-events-none backdrop-blur-xs z-10">
+            class="duration-500 fixed flex justify-center items-center left-0 top-0 w-full h-screen tracking-wide pointer-events-none backdrop-blur-xs z-10">
             <div id="table-wrapper"
-                class="duration-500 px-8 py-6 bg-neutral-800 border border-white/20 rounded-lg relative overflow-clip">
+                class="duration-500 px-4 md:px-8 py-6 bg-neutral-800 border border-white/20 rounded-lg relative overflow-clip">
                 <div class="text-xl font-medium text-center mb-5">Összehasonlítás</div>
                 <table class="gap-x-2">
                     <thead>
@@ -74,9 +74,9 @@
 
 
         <!-- aktiv toggle gomb -->
-        <div class="absolute top-22 left-0 w-full flex justify-center">
+        <div class="absolute top-32 md:top-22 left-0 w-full flex justify-center">
             <div id="active-toggle-button"
-                class="rounded-lg border border-white/10 bg-neutral-500/5 hover:bg-neutral-500/10 active:scale-[97%] select-none hover:scale-[103%] duration-200 cursor-pointer font-mono px-6 py-3 text-sm">
+                class="rounded-lg border border-white/10 bg-neutral-500/5 hover:bg-neutral-500/10 active:scale-[97%] select-none hover:scale-[103%] duration-200 cursor-pointer tracking-wide px-6 py-3 text-sm">
                 Csak az aktív rakéták
             </div>
         </div>
@@ -104,7 +104,7 @@
                 </div>
 
                 <!-- text -->
-                <div class="z-10 font-mono flex flex-col w-full">
+                <div class="z-10 tracking-wide flex flex-col w-full">
                     <div
                         class="text-xl font-medium tracking-wide card-title bg-black/80 w-full py-1.5 px-3 pointer-events-none select-none">
                         NAME
@@ -123,7 +123,7 @@
             <!-- add to fleetbtn -->
             <div class="fleet-toggle-button-wrapper absolute bottom-0 left-0 w-full h-20 px-4 duration-300 opacity-0">
                 <div class="fleet-toggle-button bg-neutral-900 cursor-pointer -mt-1.5 border border-t-0 rounded-b-lg border-neutral-400/30 w-full py-3 hover:scale-[1.03] active:scale-[0.97] origin-top duration-200
-                    select-none flex items-center justify-center font-medium font-mono text-center text-sm">
+                    select-none flex items-center justify-center font-medium tracking-wide text-center text-sm">
 
                 </div>
             </div>
